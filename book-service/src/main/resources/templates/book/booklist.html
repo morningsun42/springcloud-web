@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>图书查询</title>
+    <script type="text/javascript" src="/js/jquery.js"/>
+    <script type="text/javascript" src="/js/angular.js"/>
+    <script type="text/javascript" src="/js/jquery.cookie.js"/>
+    <script type="text/javascript">
+        //<![CDATA[
+        angular.module('app', []).controller('ctrl', function ($scope) {
+            $scope.books = [];
+            $scope.errorinfo = null;
+            $scope.query = function () {
+                $.ajax({
+                    type: "get",
+                    url: "/book/"+$scope.query_username,
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
+                    },
+                    data: {},
+                    success: function (result) {
+                        $scope.books = result.data.data.books;
+                        $scope.userinfo=result.data.data.user;
+                        $scope.$apply();
+                    },
+                    error: function (xmlhttp, status) {
+                        if (xmlhttp && xmlhttp.status == '403') {
+                            $scope.errorinfo = "您没有权限查询图书列表！";
+                            $scope.$apply();
+                        }
+                    }
+                });
+            };
+        });
+        //]]>
+    </script>
+</head>
+<body>
+<h1>图书查询页面</h1>
+
+<form ng-app="app" ng-controller="ctrl">
+    <p ng-if="errorinfo" style="color:red;">{{errorinfo}}</p>
+    <label>账号</label>：
+    <input type="text" ng-model="query_username" autofocus="autofocus"/><button ng-click="query()">查询</button> <br/>
+    <table>
+        <thead>
+        <tr>
+            <th>图书名称</th>
+            <th>图书作者</th>
+            <th>图书单价</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="book in books">
+            <td>{{book.bookname}}</td>
+            <td>{{book.bookauth}}</td>
+            <td>{{book.bookprice}} 元</td>
+        </tr>
+        </tbody>
+    </table>
+    <p ng-if="userinfo.username">账户：{{userinfo.username}}  姓名：{{userinfo.realname}}</p>
+</form>
+</body>
+</html>

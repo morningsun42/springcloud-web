@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>保存图书</title>
+    <script type="text/javascript" src="/js/jquery.js"/>
+    <script type="text/javascript" src="/js/jquery.cookie.js"/>
+    <script type="text/javascript" src="/js/jquery.base64.js"/>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+
+                if (getUrlParam("access_token")) {
+                    $.cookie('token', getUrlParam("access_token"), {expires: 7});
+                }
+
+                var userinfo = {};
+                if ($.cookie('token')) {
+                    var match = $.cookie('token').match(/[^.]+/g);
+                    if (match != null) {
+                        var json_user = $.base64.decode(match[1]);
+                        userinfo = JSON.parse(json_user);
+                        $("#userinfo").html("你好，" + userinfo.user_name);
+                    }
+                } else {
+                    $("#btn-login").show();
+                }
+                $("#btn-submit").click(function () {
+                    $("#error").hide();
+                    var bookname = $("#bookname").val();
+                    var bookauth = $("#bookauth").val();
+                    var bookprice = $("#bookprice").val();
+                    $.ajax({
+                        type: "post",
+                        url: "/book/addbook",
+                        contentType: "application/json",
+                        data: JSON.stringify({
+                            bookname: bookname,
+                            bookauth: bookauth,
+                            bookprice: bookprice,
+                            username: userinfo.user_name
+                        }),
+                        beforeSend: function (request) {
+                            request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
+                        },
+                        success: function (result) {
+                            alert("图书保存完毕");
+                        },
+                        error: function (xmlhttp, status) {
+                            if (xmlhttp && xmlhttp.status == 401) {
+                                $("#error").text("您没有权限保存图书，请先登录！");
+                            }
+                        }
+
+                    });
+                });
+            }
+        );
+
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+        // ]]>
+
+    </script>
+</head>
+<body>
+<h1>保存图书</h1>
+<form>
+    <p id="userinfo"><a id="btn-login" style="display:none;"
+                        href="http://localhost:8762/user/view-login?redirect=http://localhost:8763/book/view-addbook">请登陆</a>
+    </p>
+    <p id="error" style="color:red;"></p>
+    <label for="bookname">图书名称</label>：
+    <input type="text" id="bookname" name="bookname" autofocus="autofocus"/> <br/>
+    <label for="bookauth">图书作者</label>：
+    <input type="text" id="bookauth" name="bookauth"/> <br/>
+    <label for="bookprice">图书价格</label>：
+    <input type="text" id="bookprice" name="bookprice"/> <br/>
+    <input type="button" id="btn-submit" value="保存"/>
+</form>
+</body>
+</html>

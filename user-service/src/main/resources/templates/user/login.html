@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登陆页面</title>
+    <script type="text/javascript" src="/js/jquery.js"/>
+    <script type="text/javascript" src="/js/jquery.cookie.js"/>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            var redirect = getUrlParam("redirect");
+
+            $("#btn-submit").click(function () {
+                $('#error').hide();
+                var username = $("#username").val();
+                var password = $("#password").val();
+                $.ajax({
+                    type: "post",
+                    url: "/user/login",
+                    data: {username: username, password: password},
+                    success: function (result) {
+                        if (result.data) {
+                            $.cookie('token', result.data.token, {expires: 7});
+                            if (redirect) {
+                                location.href = redirect + "?access_token=" + result.data.token;
+                            } else {
+                                location.href = "/user/view-userlist?access_token=" + result.data.token;
+                            }
+                        } else if (result.error) {
+                            $('#error').show().text(result.error);
+                            $.cookie('token', null);
+                        }
+                    }
+                });
+            });
+
+            $('#btn-userlist').click(function () {
+                location.href = "/user/view-userlist?access_token=" + window.token;
+            });
+        });
+
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+        // ]]>
+    </script>
+</head>
+<body>
+<h1>登陆页面</h1>
+<form>
+    <p id="error" style="color:red;display:none;"></p>
+    <label for="username">账号</label>:
+    <input type="text" id="username" name="username" autofocus="autofocus"/> <br/>
+    <label for="password">密码</label>:
+    <input type="password" id="password" name="password"/> <br/>
+    <input type="button" id="btn-submit" value="登录"/>
+</form>
+</body>
+</html>

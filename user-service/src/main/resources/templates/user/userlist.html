@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表页面</title>
+    <script type="text/javascript" src="/js/jquery.js"/>
+    <script type="text/javascript" src="/js/angular.js"/>
+    <script type="text/javascript" src="/js/jquery.cookie.js"/>
+    <script type="text/javascript" src="/js/jquery.base64.js"/>
+    <script type="text/javascript">
+        //<![CDATA[
+        angular.module('app', []).filter('auth', function () {
+            return function (authlist) {
+                return $.map(authlist, function (auth) {
+                    return auth.authority;
+                });
+            }
+        }).controller('ctrl', function ($scope) {
+
+            $scope.userinfo = {};
+            var match = $.cookie('token').match(/[^.]+/g);
+            if (match != null) {
+                var info = $.base64.decode(match[1]);
+                $scope.userinfo = JSON.parse(info);
+            }
+
+
+            $scope.users = [];
+            $scope.errorinfo = null;
+            $scope.query = function () {
+                $.ajax({
+                    type: "post",
+                    url: "/user/userlist",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
+                    },
+                    data: {},
+                    success: function (result) {
+                        $scope.users = result.data;
+                        $scope.$apply();
+                    },
+                    error: function (xmlhttp, status) {
+                        if (xmlhttp && xmlhttp.status == '403') {
+                            $scope.errorinfo = "您没有权限查询用户！";
+                            $scope.$apply();
+                        }
+                    }
+                });
+            };
+            $scope.deleteUser = function (user) {
+                $.ajax({
+                    type: "post",
+                    url: "/user/delete/" + user.username,
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
+                    },
+                    data: {},
+                    success: function (result) {
+                        $scope.users.splice($scope.users.indexOf(user), 1);
+                        $scope.$apply();
+                    },
+                    error: function (xmlhttp, status) {
+                        if (xmlhttp && xmlhttp.status == '403') {
+                            $scope.errorinfo = "您没有权限删除用户！";
+                            $scope.$apply();
+                        }
+                    }
+                });
+            };
+            $scope.query();
+        });
+        //]]>
+    </script>
+</head>
+<body>
+<h1>用户列表页面</h1>
+
+<form ng-app="app" ng-controller="ctrl">
+    <p ng-if="errorinfo" style="color:red;">{{errorinfo}}</p>
+    <p>当前用户：{{userinfo.user_name}},权限：{{userinfo.authorities}}</p>
+    <table>
+        <thead>
+        <tr>
+            <th>账户</th>
+            <th>密码</th>
+            <th>姓名</th>
+            <th>角色类型</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.username}}</td>
+            <td>******</td>
+            <td>{{user.realname}}</td>
+            <td>{{user.authorities | auth}}</td>
+            <td>
+                <button ng-click="deleteUser(user)">删除用户</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<p><a href="/user/view-registry">返回注册页面</a></p>
+</body>
+</html>

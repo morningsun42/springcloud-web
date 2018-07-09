@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>注册页面</title>
+    <script type="text/javascript" src="/js/jquery.js"/>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn-submit").click(function () {
+                $('#error,#info,#userinfo').hide();
+                var username = $("#username").val();
+                var password = $("#password").val();
+                var realname = $("#realname").val();
+                var authorities = $("#authorities").val();
+                $.ajax({
+                    type: "post",
+                    url: "/user/registry",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        username: username,
+                        password: password,
+                        realname: realname,
+                        authorities: authorities
+                    }),
+                    success: function (result) {
+                        if (result.error) {
+                            $('#error').show().text(result.error);
+                        } else {
+                            $('#info').show();
+                            $('#userinfo').show().text(JSON.stringify(result.data));
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>注册页面</h1>
+<form>
+    <p id="error" style="color:red;display:none;"></p>
+    <label for="username">账号</label>：
+    <input type="text" id="username" name="username" autofocus="autofocus"/> <br/>
+    <label for="password">密码</label>：
+    <input type="password" id="password" name="password"/> <br/>
+    <label for="realname">姓名</label>：
+    <input type="text" id="realname" name="realname"/> <br/>
+    <label for="authorities">角色</label>：
+    <input type="text" id="authorities" name="authorities"/> <br/>
+    <input type="button" id="btn-submit" value="注册"/>
+
+    <p id="info" style="display:none;">注册成功<a href="/user/view-login">跳转到登陆页面</a></p>
+    <p id="userinfo" style="display:none;"></p>
+</form>
+</body>
+</html>

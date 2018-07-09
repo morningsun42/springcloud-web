@@ -1,0 +1,28 @@
+#spring:
+#  application:
+#    name: uaa-service
+#  cloud:
+#    config:
+#      uri: http://localhost:8769
+#      fail-fast: true
+#  profiles:
+#      active: pro
+
+spring:
+  application:
+    name: uaa-service
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/springcloud-web?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+#    username: root
+#    password: P@ssw0rd
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+server:
+  port: 9999
+
+management:
+  security:
+    enabled: false

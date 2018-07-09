@@ -2,6 +2,10 @@ package com.example.dto;
 
 import java.io.Serializable;
 
+/**
+ * 返回结果
+ * @param <T>
+ */
 public class MVCResult<T> implements Serializable {
     public int code = 0;
     public String error = "";

@@ -2,13 +2,25 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8766
+security.basic.enabled: false
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: user-service , blog-service
+  clusterNameExpression: new String("default")
 
-spring:
-  application:
-    name: monitor-service
-  cloud:
-    config:
-      uri: http://localhost:8769
-      fail-fast: true
-  profiles:
-      active: pro
+management:
+  security:
+    enabled: false
+
+#spring:
+#  application:
+#    name: monitor-service
+#  cloud:
+#    config:
+#      uri: http://localhost:8769
+#      fail-fast: true
+#  profiles:
+#      active: dev

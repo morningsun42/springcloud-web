@@ -6,7 +6,7 @@
 #      uri: http://localhost:8769
 #      fail-fast: true
 #  profiles:
-#      active: pro
+#      active: dev
 
 spring:
   application:

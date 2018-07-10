@@ -1,9 +1,39 @@
+#spring:
+#  application:
+#    name: admin-service
+#  cloud:
+#    config:
+#      uri: http://localhost:8769
+#      fail-fast: true
+#  profiles:
+#    active: dev
+
+server:
+  port: 9998
+security:
+  user:
+    name: admin
+    password: 123456
+management:
+  security:
+    enabled: false
+
 spring:
   application:
-    name: admin-service
-  cloud:
-    config:
-      uri: http://localhost:8769
-      fail-fast: true
-  profiles:
-    active: pro
+      name: admin-service
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
+      turbine:
+        clusters: default
+        location: monitor-service
+
+eureka:
+  instance:
+    metadata-map:
+      user.name: admin
+      user.password: 123456
+
+logging:
+  file: "logs/admin-service-pro.log"

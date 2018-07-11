@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>登陆页面</title>
-    <script type="text/javascript" src="/js/jquery.js"/>
-    <script type="text/javascript" src="/js/jquery.cookie.js"/>
+    <script type="text/javascript" src="../js/jquery.js"/>
+    <script type="text/javascript" src="../js/jquery.cookie.js"/>
     <script type="text/javascript">
         //<![CDATA[
         $(function () {
@@ -16,7 +16,7 @@
                 var password = $("#password").val();
                 $.ajax({
                     type: "post",
-                    url: "/user/login",
+                    url: "../user/login",
                     data: {username: username, password: password},
                     success: function (result) {
                         if (result.data) {
@@ -24,7 +24,7 @@
                             if (redirect) {
                                 location.href = redirect + "?access_token=" + result.data.token;
                             } else {
-                                location.href = "/user/view-userlist?access_token=" + result.data.token;
+                                location.href = "../user/view-userlist?access_token=" + result.data.token;
                             }
                         } else if (result.error) {
                             $('#error').show().text(result.error);
@@ -35,7 +35,7 @@
             });
 
             $('#btn-userlist').click(function () {
-                location.href = "/user/view-userlist?access_token=" + window.token;
+                location.href = "../user/view-userlist?access_token=" + window.token;
             });
         });
 

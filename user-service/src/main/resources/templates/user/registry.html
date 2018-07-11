@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>注册页面</title>
-    <script type="text/javascript" src="/js/jquery.js"/>
+    <!--取巧的方法 保证Zuul模式也能找到引用-->
+    <script type="text/javascript" src="../js/jquery.js"/>
     <script type="text/javascript">
         $(function () {
             $("#btn-submit").click(function () {
@@ -14,7 +15,7 @@
                 var authorities = $("#authorities").val();
                 $.ajax({
                     type: "post",
-                    url: "/user/registry",
+                    url: "../user/registry",<!--取巧的方法 保证Zuul模式也能找到引用-->
                     contentType: "application/json",
                     data: JSON.stringify({
                         username: username,
@@ -49,7 +50,7 @@
     <input type="text" id="authorities" name="authorities"/> <br/>
     <input type="button" id="btn-submit" value="注册"/>
 
-    <p id="info" style="display:none;">注册成功<a href="/user/view-login">跳转到登陆页面</a></p>
+    <p id="info" style="display:none;">注册成功<a href="../user/view-login">跳转到登陆页面</a></p>
     <p id="userinfo" style="display:none;"></p>
 </form>
 </body>

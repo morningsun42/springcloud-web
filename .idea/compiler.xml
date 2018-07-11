@@ -11,6 +11,7 @@
         <module name="commons" />
         <module name="config-server" />
         <module name="eureka-server" />
+        <module name="gateway-service" />
         <module name="monitoring-service" />
         <module name="uaa-service" />
         <module name="user-service" />
@@ -23,6 +24,7 @@
       <module name="commons" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="gateway-service" target="1.8" />
       <module name="member-service" target="1.8" />
       <module name="monitoring-service" target="1.8" />
       <module name="springcloud-web" target="1.8" />

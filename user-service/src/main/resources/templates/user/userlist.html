@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <title>用户列表页面</title>
-    <script type="text/javascript" src="/js/jquery.js"/>
-    <script type="text/javascript" src="/js/angular.js"/>
-    <script type="text/javascript" src="/js/jquery.cookie.js"/>
-    <script type="text/javascript" src="/js/jquery.base64.js"/>
+    <script type="text/javascript" src="../js/jquery.js"/>
+    <script type="text/javascript" src="../js/angular.js"/>
+    <script type="text/javascript" src="../js/jquery.cookie.js"/>
+    <script type="text/javascript" src="../js/jquery.base64.js"/>
     <script type="text/javascript">
         //<![CDATA[
         angular.module('app', []).filter('auth', function () {
@@ -30,7 +30,7 @@
             $scope.query = function () {
                 $.ajax({
                     type: "post",
-                    url: "/user/userlist",
+                    url: "../user/userlist",
                     beforeSend: function (request) {
                         request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
                     },
@@ -50,7 +50,7 @@
             $scope.deleteUser = function (user) {
                 $.ajax({
                     type: "post",
-                    url: "/user/delete/" + user.username,
+                    url: "../user/delete/" + user.username,
                     beforeSend: function (request) {
                         request.setRequestHeader("Authorization", "Bearer " + $.cookie('token'));
                     },
@@ -101,6 +101,6 @@
         </tbody>
     </table>
 </form>
-<p><a href="/user/view-registry">返回注册页面</a></p>
+<p><a href="../user/view-registry">返回注册页面</a></p>
 </body>
 </html>

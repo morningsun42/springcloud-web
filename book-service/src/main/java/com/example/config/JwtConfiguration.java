@@ -13,9 +13,6 @@ import org.springframework.util.FileCopyUtils;
 
 import java.io.IOException;
 
-/**
- * Created by fangzhipeng on 2017/5/27.
- */
 @Configuration
 public class JwtConfiguration {
     @Autowired

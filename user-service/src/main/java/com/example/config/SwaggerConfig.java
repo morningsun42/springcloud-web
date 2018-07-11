@@ -17,13 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by chen on 2017/4/19.
- * <p>
- * Email 122741482@qq.com
- * <p>
- * Describe:
- */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -42,7 +35,6 @@ public class SwaggerConfig {
         return params;
     }
 
-
     @Bean
     public Docket sysApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -51,8 +43,6 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.example.web"))
                 .paths(PathSelectors.any())
                 .build().globalOperationParameters(parameter());
-        //.securitySchemes(newArrayList(oauth()))
-        // .securityContexts(newArrayList(securityContext()));
     }
 
     private ApiInfo apiInfo() {
@@ -66,4 +56,3 @@ public class SwaggerConfig {
     }
 
 }
-

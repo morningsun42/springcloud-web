@@ -7,7 +7,7 @@ import com.example.dto.MVCResult;
 import com.example.entity.User;
 import com.example.exception.CommonException;
 import com.example.exception.ErrorCode;
-import com.example.service.utils.BPwdEncoderUtils;
+import com.example.utils.BPwdEncoderUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

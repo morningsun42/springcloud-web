@@ -4,7 +4,7 @@ import com.example.dto.MVCResult;
 import com.example.entity.Role;
 import com.example.entity.User;
 import com.example.service.UserService;
-import com.example.service.utils.BPwdEncoderUtils;
+import com.example.utils.BPwdEncoderUtils;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

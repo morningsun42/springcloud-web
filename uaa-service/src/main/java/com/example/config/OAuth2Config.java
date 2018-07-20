@@ -15,9 +15,8 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
-/**
- * Created by fangzhipeng on 2017/5/27.
- */
+//keytool -genkeypair -alias server-jwt -keyalg RSA  -keypass liuchen  -keystore /usr/games/server-jwt.jks  -storepass liuchen
+//keytool -list -rfc --keystore /usr/games/server-jwt.jks | openssl x509 -inform pem -pubkey
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
@@ -48,9 +47,9 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("fzp-jwt.jks"), "fzp123".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("server-jwt.jks"), "liuchen".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("fzp-jwt"));
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("server-jwt"));
         return converter;
     }
 }

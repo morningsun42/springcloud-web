@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="486a0497-17d7-4b90-bafb-d13df2dc2deb" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/uaa-service/src/main/resources/server-jwt.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-service/src/main/resources/public.cert" beforeDir="false" afterPath="$PROJECT_DIR$/book-service/src/main/resources/public.cert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uaa-service/src/main/java/com/example/config/OAuth2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/uaa-service/src/main/java/com/example/config/OAuth2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/public.cert" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/public.cert" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,38 +41,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OAuth2Config.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/example/config/OAuth2Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zipkin-service/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uaa-service/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+            <state relative-caret-position="334">
+              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+              <folding>
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2402#2403#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,6 +185,62 @@
               <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springcloud-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springcloud-web" type="462c0819:PsiDirectoryNode" />
+              <item name="uaa-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -274,7 +305,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.21809745" />
+    <option name="contentProportion" value="0.18020108" />
   </component>
   <component name="RunManager" selected="Application.GatewayServiceApplication">
     <configuration name="AdminServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -466,7 +497,7 @@
       <workItem from="1531120397297" duration="2960000" />
       <workItem from="1531190492328" duration="17287000" />
       <workItem from="1531273290256" duration="17671000" />
-      <workItem from="1532053695361" duration="5829000" />
+      <workItem from="1532053695361" duration="7062000" />
     </task>
     <task id="LOCAL-00001" summary="注释">
       <created>1531121511679</created>
@@ -496,11 +527,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531302375474</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="JWT证书部分调整">
+      <created>1532067426873</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532067426873</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155978000" />
+    <option name="totallyTimeSpent" value="157211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +554,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50073206" side_tool="true" weight="0.38765824" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="14" sideWeight="0.5007553" side_tool="true" visible="true" weight="0.3218391" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.17598188" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info id="Capture Tool" order="7" />
@@ -527,17 +565,16 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.16348357" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294893" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3261944" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" show_stripe_button="false" weight="0.32952693" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.3908046" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.49924472" visible="true" weight="0.3218391" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32952693" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.46952224" />
       <window_info anchor="bottom" id="Spring" order="7" show_stripe_button="false" weight="0.32952693" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32925898" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18429004" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18655589" />
       <window_info anchor="right" id="Bean Validation" order="8" show_stripe_button="false" weight="0.32930514" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
@@ -546,6 +583,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Problems" order="13" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3261944" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925898" />
@@ -576,7 +614,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/member-service/src/main/java/com/example/client/AuthServiceClient.java" />
     <entry file="file://$PROJECT_DIR$/member-service/src/main/java/com/example/config/ResourceServerConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/member-service/src/main/java/com/example/client/hystrix/UaaServiceHystrix.java" />
     <entry file="file://$PROJECT_DIR$/member-service/src/main/java/com/example/client/hystrix/AuthServiceHystrix.java" />
@@ -757,9 +794,7 @@
         <state relative-caret-position="-105" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/service.jks">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/service.jks" />
     <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/example/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-145">
@@ -771,9 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <element signature="e#689#690#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,9 +823,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/service-jwt.jks">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uaa-service/src/main/resources/service-jwt.jks" />
     <entry file="file://$PROJECT_DIR$/uaa-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -832,10 +862,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.0/dependcies/repo/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/authentication/AuthenticationManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uaa-service/src/main/java/com/example/config/OAuth2Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="334">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding>
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
